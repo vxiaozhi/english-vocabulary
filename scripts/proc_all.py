@@ -14,6 +14,9 @@ global_capital_words = []
 
 def add_word_to_global_dict(word):
     if word['word'] not in global_words_dict:
+        if " " in word['word']:
+            print("word with space: ", word['word'])
+            return
         word['seq'] = len(global_words_dict)
         global_words_dict[word['word']] = word
 
